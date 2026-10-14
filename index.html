@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0a3945" />
+    <title>帆船游戏 · 海风计时赛</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <canvas id="sea"></canvas>
+      <div class="shade"></div>
+      <header class="brand">✦ 海风 <small>帆船计时赛 01</small></header>
+      <button id="reduce-motion" class="motion">◒</button>
+      <section id="intro" class="intro">
+        <div class="eyebrow">✦　 SUNSPOKE RUN　·　蓝湾群岛</div>
+        <h1>帆船<span>游戏</span></h1>
+        <p>读懂风向，穿过浮标门。<br />沿着阳光照亮的海面，寻找更快的航线。</p>
+        <button id="start" class="primary">开始竞速　→</button
+        ><button id="help" class="link">如何航行</button>
+        <div class="stats">
+          <b>07<small>道浮标门</small></b
+          ><i></i><b>1.4 km<small>开放海域</small></b
+          ><i></i><b>∞<small>条航行线</small></b>
+        </div>
+        <div class="record">最佳航时　<b id="best-time">--:--.--</b></div>
+      </section>
+      <section id="hud" class="hud">
+        <div class="label">● SUNSPOKE RUN</div>
+        <div class="meters">
+          <div>航行时间<strong id="timer">00:00.00</strong></div>
+          <div>浮标门<strong id="gate-count">00 / 07</strong></div>
+          <div>
+            速度<strong><b id="speed">0</b> km/h</strong>
+          </div>
+        </div>
+        <div class="wind">
+          风向 <i id="wind-arrow">↑</i> <b id="wind-value">12 kn</b>
+        </div>
+        <div class="hint">A/D 或 ←/→ 转向　·　空格 阵风</div>
+      </section>
+      <div id="toast" class="toast"></div>
+      <div class="buttons">
+        <button id="zoom-in">+</button><button id="zoom-out">−</button
+        ><button id="gust">GUST　↗</button>
+      </div>
+      <div class="touch">
+        <button id="left">←</button><button id="right">→</button>
+      </div>
+      <section id="finish" class="finish hidden">
+        <div>
+          <small>REGATTA COMPLETE</small>
+          <h2>越过终点</h2>
+          <p>你的航线时间</p>
+          <strong id="final-time">00:00.00</strong>
+          <p id="finish-best"></p>
+          <button id="again" class="primary">再航一次 ↻</button
+          ><button id="home" class="link">返回首页</button>
+        </div>
+      </section>
+      <dialog id="howto-dialog">
+        <button id="dialog-close" class="close">×</button
+        ><small>QUICK GUIDE</small>
+        <h2>顺着风，穿过门</h2>
+        <p>
+          用 A/D 或方向键掌舵，依次穿过七道金色浮标门。按空格或点 GUST
+          借风加速。手机可用屏幕方向键。
+        </p>
+        <p>看清下一道门，提前一点转向。</p>
+      </dialog>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
